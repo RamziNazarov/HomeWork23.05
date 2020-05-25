@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Person list";
+}
+<form method="post" action="~/Person/SearchByFLM">
+    <div class="row">
+        <div class="input-group col-md-6">
+            <label for="FirstName">First name </label>
+            <input class="form-control" style="left:50px;position:relative;" type="text" name="FirstName" id="FirstName" placeholder="Enter first name" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="input-group col-md-6">
+            <label for="LastName">Last name </label>
+            <input class="form-control" style="left:50px;position:relative;" type="text" name="LastName" id="LastName" placeholder="Enter last name" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="input-group col-md-6">
+            <label for="MiddleName">Middle name </label>
+            <input class="form-control" style="left:50px;position:relative;" type="text" name="MiddleName" id="MiddleName" placeholder="Enter middle name" />
+        </div>
+    </div>
+    <br />
+    <input type="submit" class="btn-primary input-group form-control col-md-2" value="Search" />
+    <br />
+</form>
+@if (ViewBag.Person != null)
+{
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Middle name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.Person.Count > 0)
+                foreach (var persons in ViewBag.Person)
+                {
+                    <tr>
+                        <td>@persons.Id</td>
+                        <td>@persons.FirstName</td>
+                        <td>@persons.LastName</td>
+                        <td>@persons.MiddleName</td>
+                    </tr>
+                }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center">Такого не существует</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

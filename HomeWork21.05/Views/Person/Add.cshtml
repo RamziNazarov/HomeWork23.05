@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Add Person";
+}
+<h4 class="text-info">Add</h4>
+<form method="post" action="~/Person/Add">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group">
+                <label for="FirstName">First name</label><br />
+                <input name="FirstName" id="FirstName" style="position:relative;left:50px;" type="text" class="form-control" placeholder="Enter person first name" />
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group">
+                <label for="LastName">Last name</label>
+                <input name="LastName" id="LastName" style="position:relative;left:50px;" type="text" class="form-control" placeholder="Enter person last name" />
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group">
+                <label for="MiddleName">Middle name</label><br />
+                <input name="MiddleName" id="MiddleName" type="text" class="form-control" style="position:relative;left:50px;" placeholder="Enter person middle name" />
+            </div>
+        </div>
+    </div>
+    <br />
+    <input type="submit" class="btn btn-primary col-md-2 input-group form-control" value="Save" />
+</form>

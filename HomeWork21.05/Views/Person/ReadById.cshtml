@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Person";
+}
+<form method="post" action="/Person/ReadById">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group">
+                <label for="Id">Id</label><br />
+                <input name="Id" id="Id" style="position:relative;left:20px;" type="number" class="form-control" placeholder="Enter person id" />
+            </div>
+        </div>
+    </div>
+    <br />
+    <input type="submit" class="btn btn-primary form-control input-group col-md-2" value="Search" />
+    <br />
+</form>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Middle name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @if (ViewBag.Person != null)
+            {
+                <td>@ViewBag.Person.Id</td>
+                <td>@ViewBag.Person.FirstName</td>
+                <td>@ViewBag.Person.LastName</td>
+                <td>@ViewBag.Person.MiddleName</td>
+            }
+            else
+            {
+                <td class="text-center" colspan="5">Такого id нет</td>
+
+            }
+        </tr>
+    </tbody>
+</table>

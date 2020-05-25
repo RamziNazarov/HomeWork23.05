@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Person list";
+}
+<h4 class="text-info">List of persons</h4>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Middle name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.Persons.Count > 0)
+        {
+            foreach (var persons in ViewBag.Persons)
+            {
+                <tr>
+                    <td>@persons.Id</td>
+                    <td>@persons.FirstName</td>
+                    <td>@persons.LastName</td>
+                    <td>@persons.MiddleName</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td class="text-center" colspan="5">empty</td>
+            </tr>
+        }
+    </tbody>
+</table>
